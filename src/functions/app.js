@@ -24,7 +24,7 @@ const hbs = exphbs.create({
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-app.set("views", "../../views");
+app.set("views", "./views");
 
 // Middleware to redirect from / to /login
 app.use((req, res, next) => {
