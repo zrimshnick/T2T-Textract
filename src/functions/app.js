@@ -1,10 +1,10 @@
 import express from "express";
 import session from "express-session";
 import serverless from "serverless-http";
-const app = express();
 import configRoutes from "./routes/index.js";
 import exphbs from "express-handlebars";
 
+const app = express();
 app.use("/public", express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -24,6 +24,7 @@ const hbs = exphbs.create({
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+app.set("views", "../../views");
 
 // Middleware to redirect from / to /login
 app.use((req, res, next) => {
@@ -40,4 +41,4 @@ configRoutes(app);
   console.log("Your routes will be running on http://localhost:3000");
 }); */
 
-module.exports.handler = serverless(app);
+export const handler = serverless(app);
