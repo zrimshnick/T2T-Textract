@@ -5,7 +5,8 @@
   "main": "src/functions/app.js",
   "type": "module",
   "scripts": {
-    "start": "netlify dev"
+    "start": "node src/functions/app.js",
+    "build": "echo 'No build step required"
   },
   "author": "Zack Rimshnick",
   "license": "ISC",
