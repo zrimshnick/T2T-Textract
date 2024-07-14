@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/functions/app.js",
-    "build": "echo 'No build step required"
+    "build": "echo 'No build step required'"
   },
   "author": "Zack Rimshnick",
   "license": "ISC",
