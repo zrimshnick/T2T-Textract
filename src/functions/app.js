@@ -2,7 +2,7 @@ import express from "express";
 import session from "express-session";
 import serverless from "serverless-http";
 const app = express();
-import configRoutes from "../../public/routes/index.js";
+import configRoutes from "./routes/index.js";
 import exphbs from "express-handlebars";
 
 app.use("/public", express.static("public"));
@@ -24,7 +24,6 @@ const hbs = exphbs.create({
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-app.set("views", "../../views");
 
 // Middleware to redirect from / to /login
 app.use((req, res, next) => {
