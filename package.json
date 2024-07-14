@@ -2,16 +2,17 @@
   "name": "t2t-textract",
   "version": "1.0.0",
   "description": "T2T Text Extractor using AWS Textract",
-  "main": "app.js",
+  "main": "src/functions/app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js"
+    "start": "netlify dev"
   },
   "author": "Zack Rimshnick",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
-    "express-session": "^1.18.0"
+    "express-session": "^1.18.0",
+    "serverless-http": "^3.2.0"
   }
 }

@@ -1,12 +1,12 @@
 import express from "express";
 import session from "express-session";
+import serverless from "serverless-http";
 const app = express();
-import configRoutes from "./public/routes/index.js";
+import configRoutes from "../../public/routes/index.js";
 import exphbs from "express-handlebars";
 
 app.use("/public", express.static("public"));
 app.use(express.json());
-
 app.use(express.urlencoded({ extended: true }));
 // app.use(rewriteUnsupportedBrowserMethods);
 
@@ -35,7 +35,9 @@ app.use((req, res, next) => {
 
 configRoutes(app);
 
-app.listen(3000, () => {
+/* app.listen(3000, () => {
   console.log("We've got a server!");
   console.log("Your routes will be running on http://localhost:3000");
-});
+}); */
+
+module.exports.handler = serverless(app);
